@@ -20,9 +20,21 @@ from calculator.calculation import Calculation
     (Decimal('12'), Decimal('4'), Operations.division, Decimal('3')),
     (Decimal('0'), Decimal('4'), Operations.division, Decimal('0')),
     (Decimal('3.8'), Decimal('2'), Operations.division, Decimal('1.9')),
-
 ])
 def test_calculation_operations(operand_a, operand_b, operation, expected):
     '''Test perform method'''
     cal = Calculation(operand_a, operand_b, operation)
     assert cal.perform() == expected
+
+@pytest.mark.parametrize("operand_a, operand_b, operation", [
+    (Decimal('3'), Decimal('4'), Operations.add),
+    (Decimal('3'), Decimal('0'), Operations.add),
+    (Decimal('7.2'), Decimal('4.1'), Operations.subtract),
+    (Decimal('3'), Decimal('4'), Operations.multiply),
+    (Decimal('0'), Decimal('4'), Operations.division),
+    (Decimal('3.8'), Decimal('2'), Operations.division),
+])
+def test_create_calculation(operand_a, operand_b, operation):
+    '''Test create calculation use factory'''
+    cal = Calculation.create(operand_a, operand_b, operation)
+    assert isinstance(cal, Calculation)
