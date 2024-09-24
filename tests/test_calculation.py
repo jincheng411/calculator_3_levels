@@ -1,8 +1,8 @@
-from decimal import Decimal
-from calculator import add, subtract
+'''Test cases for Calculation class'''
+from calculator.operations import Operations
 from calculator.calculation import Calculation
-import pytest
 
 def test_calculation_operations():
-    cal = Calculation(Decimal('1'), Decimal('2'), add)
-    assert cal.perform() == Decimal('3'), f"calculation add method failed"
+    '''Test perform method'''
+    cal = Calculation(1, 2, Operations.add)
+    assert cal.perform() == 3
