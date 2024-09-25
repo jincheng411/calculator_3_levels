@@ -16,4 +16,4 @@ class Calculation:
         return self.operation(self.a, self.b)
 
     def print_calculation(self):
-        return f"calculation: {self.a}, {self.b}, {self.operation}"
+        return f"calculation: {self.a}, {self.b}, {self.operation.__name__}"

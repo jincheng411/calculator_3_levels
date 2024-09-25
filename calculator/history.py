@@ -3,10 +3,10 @@ from calculator.calculation import Calculation
 
 
 class History:
-    history = List[Calculation] = []
+    history: List[Calculation] = []
 
     @classmethod
-    def addCalculation(cls, cal: Calculation):
+    def add_calculation(cls, cal: Calculation):
         cls.history.append(cal)
 
     @classmethod
@@ -15,11 +15,11 @@ class History:
 
     @classmethod
     def clear_history(cls):
-        cls.history.clear
+        cls.history.clear()
 
     @classmethod
     def print_history(cls):
         output = ""
-        for cal in cls.history:
-            output += cal.print_calculation(cal)
+        for i in range(len(cls.history)):
+            output += f"{i + 1}. {cls.history[i].print_calculation()}. "
         return output
