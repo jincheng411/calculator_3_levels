@@ -38,3 +38,9 @@ def test_create_calculation(operand_a, operand_b, operation):
     '''Test create calculation use factory'''
     cal = Calculation.create(operand_a, operand_b, operation)
     assert isinstance(cal, Calculation)
+
+def test_division_by_zero_exception():
+    '''Test should throw an exception if divide by zero'''
+    cal = Calculation(0, 0, Operations.division)
+    with pytest.raises(ZeroDivisionError):
+        cal.perform()

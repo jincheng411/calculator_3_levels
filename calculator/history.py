@@ -23,3 +23,7 @@ class History:
         for i in range(len(cls.history)):
             output += f"{i + 1}. {cls.history[i].print_calculation()}. "
         return output
+
+    @classmethod
+    def get_last_record(cls):
+        return cls.history[-1]
