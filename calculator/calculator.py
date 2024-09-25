@@ -1,7 +1,9 @@
 from decimal import Decimal
 from typing import Callable
 
-from calculator import operations
+
+
+from calculator.operations import Operations
 from calculator.calculation import Calculation
 from calculator.history import History
 
@@ -14,18 +16,18 @@ class Calculator:
 
     @staticmethod
     def add(a: Decimal, b: Decimal) -> Decimal:
-        return Calculator._perform_operation(a, b, operations.add)
+        return Calculator._perform_operation(a, b, Operations.add)
 
     @staticmethod
     def subtract(a: Decimal, b: Decimal) -> Decimal:
-        return Calculator._perform_operation(a, b, operations.subtract)
+        return Calculator._perform_operation(a, b, Operations.subtract)
 
     @staticmethod
     def multiply(a: Decimal, b: Decimal) -> Decimal:
-        return Calculator._perform_operation(a, b, operations.multiply)
+        return Calculator._perform_operation(a, b, Operations.multiply)
 
     @staticmethod
     def division(a: Decimal, b: Decimal) -> Decimal:
-        return Calculator._perform_operation(a, b, operations.division)
+        return Calculator._perform_operation(a, b, Operations.division)
 
 

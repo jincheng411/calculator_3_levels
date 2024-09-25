@@ -4,6 +4,9 @@ from calculator.calculation import Calculation
 from calculator.history import History
 from calculator.operations import Operations
 
+@pytest.fixture(scope='session', autouse=True)
+def clear_calculations_history():
+    History.history.clear()
 
 def test_add_calculation():
     cal1 = Calculation.create(1 , 2, Operations.add)
