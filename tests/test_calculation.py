@@ -1,13 +1,8 @@
 '''Test cases for Calculation class'''
 from decimal import Decimal
 import pytest
-from calculator.history import History
 from calculator.operations import Operations
 from calculator.calculation import Calculation
-
-@pytest.fixture(scope='session', autouse=True)
-def clear_calculations_history():
-    History.history.clear()
 
 @pytest.mark.parametrize("operand_a, operand_b, operation, expected", [
     (Decimal('3'), Decimal('4'), Operations.add, Decimal('7')),
