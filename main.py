@@ -1,13 +1,15 @@
 import sys
 from calculator.calculator import Calculator
 from decimal import Decimal, InvalidOperation
+from calculator.operations import add, subtract, multiply, division
+
 
 def calculate_and_print(operand_a, operand_b, operation):
     operation_mappings = {
-        'add': Calculator.add,
-        'subtract': Calculator.subtract,
-        'multiply': Calculator.multiply,
-        'divide': Calculator.division
+        'add': add,
+        'subtract': subtract,
+        'multiply': multiply,
+        'divide': division
     }
 
     try:

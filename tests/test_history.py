@@ -2,7 +2,7 @@
 import pytest
 from calculator.calculation import Calculation
 from calculator.history import History
-from calculator.operations import Operations
+from calculator.operations import add, subtract, multiply, division
 
 @pytest.fixture(scope='session', autouse=True)
 def clear_calculations_history():
@@ -11,8 +11,8 @@ def clear_calculations_history():
 
 def test_add_calculation():
     '''test add calculation history'''
-    cal1 = Calculation.create(1, 2, Operations.add)
-    cal2 = Calculation.create(3, 4, Operations.multiply)
+    cal1 = Calculation.create(1, 2, add)
+    cal2 = Calculation.create(3, 4, multiply)
     History.add_calculation(cal1)
     History.add_calculation(cal2)
     assert len(History.history) == 2
@@ -36,7 +36,7 @@ def test_clear_history():
 
 def test_get_last_record():
     '''should return the last calculation history'''
-    cal = Calculation.create(5, 6, Operations.add)
+    cal = Calculation.create(5, 6, add)
     History.add_calculation(cal)
     assert History.get_last_record().a == 5
     assert History.get_last_record().b == 6
