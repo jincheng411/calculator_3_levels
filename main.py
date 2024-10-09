@@ -1,4 +1,5 @@
 import sys
+from calculator import App
 from calculator.calculator import Calculator
 from decimal import Decimal, InvalidOperation
 from calculator.operations import add, subtract, multiply, division
@@ -36,4 +37,5 @@ def main():
     calculate_and_print(a, b, operation)
 
 if __name__ == '__main__':
-    main()
+    app = App()
+    app.start()

@@ -16,5 +16,6 @@ def multiply(a: Decimal, b: Decimal) -> Decimal:
 
 def division(a: Decimal, b: Decimal) -> Decimal:
     if b == 0:
-        raise ZeroDivisionError
+        raise ZeroDivisionError("divided by zero")
     return a / b
+
