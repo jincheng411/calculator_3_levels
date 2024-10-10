@@ -1,4 +1,4 @@
-# conftest.py
+'''conftest.py'''
 import pytest
 from decimal import Decimal
 from faker import Faker
@@ -36,7 +36,7 @@ def pytest_addoption(parser):
     parser.addoption("--num_records", action="store", default=5, type=int, help="Number of test records to generate")
 
 def pytest_generate_tests(metafunc):
-    # Check if the test is expecting any of the dynamically generated fixtures
+    ''' Check if the test is expecting any of the dynamically generated fixtures'''
     if {"operand_a", "operand_b", "expected"}.intersection(set(metafunc.fixturenames)):
         num_records = metafunc.config.getoption("num_records")
         # Adjust the parameterization to include both operation and operation for broad compatibility

@@ -1,3 +1,4 @@
+'''test cases for commands'''
 from calculator.commands import CommandHandler
 from calculator.plugins.divide import DivideCommand
 from calculator.plugins.add import AddCommand

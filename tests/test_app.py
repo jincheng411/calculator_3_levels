@@ -1,4 +1,4 @@
-# tests/test_app.py
+'''tests/test_app.py'''
 from calculator import App
 import pytest
 from unittest.mock import MagicMock, patch
