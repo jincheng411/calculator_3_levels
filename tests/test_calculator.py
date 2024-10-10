@@ -1,6 +1,5 @@
 '''Test cases for Calculator class'''
 from decimal import Decimal
-import pytest
 from calculator.calculator import Calculator
 
 # @pytest.mark.parametrize("operand_a, operand_b, expected", [
