@@ -10,10 +10,7 @@ class MultiplyCommand(Command):
             print("Wrong number of arguments: multiply <num1> <num2>")
             return
 
-        try:
-            num1 = Decimal(args[0])
-            num2 = Decimal(args[1])
-            result = Calculator.multiply(num1, num2)
-            print(f"{num1} * {num2} = {result}.")
-        except Error:
-            print("Please enter valid numbers.")
+        num1 = Decimal(args[0])
+        num2 = Decimal(args[1])
+        result = Calculator.multiply(num1, num2)
+        print(f"{num1} * {num2} = {result}.")

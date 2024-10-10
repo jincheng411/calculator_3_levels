@@ -13,7 +13,5 @@ class DivideCommand(Command):
                 num2 = Decimal(args[1])
                 result = Calculator.division(num1, num2)
                 print(f"{num1} / {num2} = {result}.")
-            except ValueError:
-                print("Please enter valid numbers.")
             except ZeroDivisionError:
                 print("Error: Division by zero.")
